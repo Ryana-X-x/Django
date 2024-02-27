@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <h1>Welcome </h1>
+
+    <form method="post" action= 'add'>
+        Enter 1st number: <label>
+        <input type="text" name="number1">
+        <br>
+    </label>
+    Enter second number: <label>
+        <input type="text" name="number2">
+        <br>
+    </label>
+    <label>
+        <input type="submit" name="submit">
+    </label>
+    </form>
+
+    {% endblock %}
+</body>
+</html>
