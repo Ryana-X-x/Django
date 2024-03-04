@@ -9,12 +9,13 @@
     {% block content %}
     <h1>Welcome </h1>
 
-    <form method="post" action= 'add'>
+    <form method="post" action= "add">
+        {% csrf_token %}
         Enter 1st number: <label>
         <input type="text" name="number1">
         <br>
     </label>
-    Enter second number: <label>
+        Enter second number: <label>
         <input type="text" name="number2">
         <br>
     </label>
