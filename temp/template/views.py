@@ -9,9 +9,14 @@ def hello(request):
 
 def add(request):
     if request.method == 'POST':
-        value1 = int(request.POST.get('value1'))
-        value2 = int(request.POST.get('value2'))
+        try:
+            value1 = int(request.POST.get('number1'))
+            value2 = int(request.POST.get('number2'))
+        except (TypeError, ValueError):
+            # Handle the case where values cannot be converted to integers
+            return HttpResponse('Invalid input. Please enter valid numbers.')
+
         result = value1 + value2
-        return render(request,'result.html')
+        return render(request, 'result.html', {'result': result})
     else:
         return HttpResponse('Method not allowed')
